@@ -1,0 +1,280 @@
+/* ===== Base ===== */
+:root {
+    --bg: #121212;
+    --bg-alt: #1a1a1a;
+    --card-bg: #1e1e1e;
+    --text: #e8e8e8;
+    --text-muted: #a0a0a0;
+    --accent: #6ee7b7;
+    --accent-hover: #4fd1a5;
+    --border: #2a2a2a;
+    --navbar-height: 68px;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: "Segoe UI", Roboto, Arial, sans-serif;
+    line-height: 1.6;
+}
+
+/* ===== Fixed Navbar ===== */
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: var(--navbar-height);
+    background: rgba(18, 18, 18, 0.92);
+    backdrop-filter: blur(8px);
+    border-bottom: 1px solid var(--border);
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+}
+
+.navbar-inner {
+    max-width: 1100px;
+    width: 100%;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 24px;
+}
+
+/* Prevents content from being hidden under the fixed navbar */
+.navbar-spacer {
+    height: var(--navbar-height);
+}
+
+.logo {
+    color: var(--accent);
+    font-weight: 700;
+    font-size: 1.3rem;
+    text-decoration: none;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 26px;
+}
+
+.nav-links a {
+    color: var(--text);
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 0.95rem;
+    transition: color 0.2s ease;
+}
+
+.nav-links a:hover {
+    color: var(--accent);
+}
+
+/* ===== Layout ===== */
+main {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 24px;
+}
+
+.section {
+    padding: 70px 0;
+    border-bottom: 1px solid var(--border);
+    scroll-margin-top: var(--navbar-height);
+}
+
+.section:last-of-type {
+    border-bottom: none;
+}
+
+h2 {
+    font-size: 2rem;
+    margin-bottom: 28px;
+    color: var(--accent);
+}
+
+/* ===== Hero / About ===== */
+.hero {
+    display: flex;
+    align-items: center;
+    gap: 50px;
+    flex-wrap: wrap;
+}
+
+.hero-photo {
+    text-align: center;
+    flex-shrink: 0;
+}
+
+.hero-photo img {
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 3px solid var(--accent);
+    display: block;
+}
+
+.photo-caption {
+    margin-top: 10px;
+    color: var(--text-muted);
+    font-style: italic;
+    font-size: 0.85rem;
+}
+
+.hero-content h1 {
+    font-size: 2.6rem;
+}
+
+.role {
+    color: var(--accent);
+    font-weight: 600;
+    margin: 6px 0 20px;
+}
+
+/* ===== Info list ===== */
+.info-list {
+    list-style: none;
+}
+
+.info-list li {
+    background: var(--bg-alt);
+    padding: 12px 16px;
+    margin-bottom: 8px;
+    border-radius: 8px;
+    border: 1px solid var(--border);
+}
+
+.info-list li span {
+    color: var(--accent);
+    font-weight: 600;
+    margin-right: 6px;
+}
+
+/* ===== Skills ===== */
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 20px;
+}
+
+.skill-block, .hobby-block {
+    background: var(--card-bg);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 22px;
+    transition: transform 0.2s ease, border-color 0.2s ease;
+}
+
+.skill-block:hover, .hobby-block:hover {
+    transform: translateY(-4px);
+    border-color: var(--accent);
+}
+
+.skill-block h3, .hobby-block h3 {
+    color: var(--accent);
+    margin-bottom: 8px;
+}
+
+.skill-block p, .hobby-block p {
+    color: var(--text-muted);
+}
+
+/* ===== Hobbies ===== */
+.hobbies-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 20px;
+}
+
+.hobby-block img {
+    width: 100%;
+    height: 160px;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-bottom: 14px;
+    display: block;
+}
+
+.hobby-block.no-photo {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.hobby-block .photo-caption {
+    margin-top: 4px;
+}
+
+/* ===== Contact ===== */
+.contact-list {
+    list-style: none;
+    display: flex;
+    gap: 16px;
+    margin-top: 18px;
+}
+
+.btn, .contact-list a {
+    display: inline-block;
+    padding: 10px 24px;
+    background: var(--accent);
+    color: #121212;
+    text-decoration: none;
+    font-weight: 600;
+    border-radius: 8px;
+    transition: background 0.2s ease;
+}
+
+.btn:hover, .contact-list a:hover {
+    background: var(--accent-hover);
+}
+
+/* ===== Footer ===== */
+.footer {
+    text-align: center;
+    padding: 28px 20px;
+    color: var(--text-muted);
+    font-size: 0.9rem;
+    border-top: 1px solid var(--border);
+}
+
+.footer p {
+    margin: 4px 0;
+}
+
+/* ===== Responsive ===== */
+@media (max-width: 720px) {
+    .navbar-inner {
+        flex-direction: column;
+        gap: 8px;
+        padding: 10px 16px;
+    }
+    .navbar {
+        height: auto;
+    }
+    :root {
+        --navbar-height: 96px;
+    }
+    .nav-links {
+        gap: 14px;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    .hero {
+        flex-direction: column;
+        text-align: center;
+    }
+}
